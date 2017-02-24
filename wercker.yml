@@ -1,0 +1,12 @@
+ci:
+  box: python:3.6
+  steps:
+    - script:
+        name: install dependencies
+        code: yes w | pip install -r requirements.txt
+    - script:
+        name: setup environment
+        code: cp .env.example .env
+    - script:
+        name: print python version
+        code: python3 --version
