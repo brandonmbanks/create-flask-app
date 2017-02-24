@@ -8,5 +8,5 @@ ci:
         name: setup environment
         code: cp .env.example .env
     - script:
-        name: print python version
-        code: python3 --version
+        name: run tests
+        code: nosetests tests/
