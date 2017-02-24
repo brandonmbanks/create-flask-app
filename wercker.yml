@@ -6,7 +6,7 @@ ci:
         code: yes w | pip install -r requirements.txt
     - script:
         name: setup environment
-        code: cp .env.ci .env
+        code: cp .env.example .env
     - script:
         name: print python version
         code: python3 --version
