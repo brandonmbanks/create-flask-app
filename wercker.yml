@@ -3,7 +3,7 @@ ci:
   steps:
     - script:
         name: install dependencies
-        code: yes w | pip install -r requirements.txt
+        code: yes w | pip3 install -r requirements.lock
     - script:
         name: setup environment
         code: cp .env.example .env
