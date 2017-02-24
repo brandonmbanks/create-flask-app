@@ -5,6 +5,7 @@ verify_ssl = true
 [packages]
 autoenv = "*"
 Flask = "*"
+gevent = "*"
 gunicorn = "*"
 python-dotenv = "*"
 requests = "*"
