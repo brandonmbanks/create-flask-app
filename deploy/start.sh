@@ -1,3 +1,4 @@
+#!/bin/bash
 python3 manage.py db upgrade
 if [ "$FLASK_ENV" == "development" ]
 then
