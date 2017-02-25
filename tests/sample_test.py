@@ -8,6 +8,7 @@ class SampleTest(unittest.TestCase):
         result = 2 + 2
         self.assertEqual(4, result)
 
-    def test_it_should_get_env_variables(self):
-        result = os.getenv('APP_ENV')
-        self.assertEqual('local', result)
+    def test_it_should_correctly_set_app_config(self):
+        result = os.getenv('APP_SETTINGS')
+        self.assertEqual('config.LocalConfig', result)
+        self.assertTrue(app.config['FLASK_DEBUG'])
