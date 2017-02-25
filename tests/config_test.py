@@ -2,6 +2,7 @@ import unittest
 from app import app
 import os
 
+
 class ConfigTest(unittest.TestCase):
 
     def test_it_should_correctly_set_app_config(self):
