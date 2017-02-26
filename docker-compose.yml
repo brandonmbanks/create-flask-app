@@ -5,19 +5,34 @@ services:
         restart: always
         command: bash ./deploy/start.sh
         environment:
-        - FLASK_ENV=development
+            - FLASK_ENV=development
         ports:
             - '5000:5000'
         volumes:
-            - .:/var/www
+            - .:/src
+        depends_on:
+            - db
     nginx:
         build: ./nginx/.
         restart: always
         ports:
             - '80:80'
         volumes:
-            - web:/var/www
+            - web:/src
+            - /var/www
         links:
             - web
+    db:
+        restart: always
+        image: postgres:9.6
+        volumes:
+            - db:/var/lib/postgresql/data
+        environment:
+            POSTGRES_PASSWORD: secret
+            POSTGRES_USER: flask
+            POSTGRES_DB: flask
+        ports:
+            - "5432:5432"
 volumes:
     web:
+    db:

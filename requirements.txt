@@ -1,5 +1,11 @@
+alembic
 flask
-gunicorn
+flask-migrate
+flask-script
+flask-sqlalchemy
 gevent
-python-dotenv
+gunicorn
 nose
+psycopg2
+python-dotenv
+sqlalchemy
