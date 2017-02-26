@@ -1,12 +1,13 @@
 from database import db
+from sqlalchemy import Column, Integer, String, Sequence
 
 
 class User(db.Model):
     __tablename__ = 'users'
 
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String, unique=True)
-    email = db.Column(db.String(120), unique=True)
+    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    username = Column(String, unique=True)
+    email = Column(String(120), unique=True)
 
     def __init__(self, username, email):
         self.username = username
